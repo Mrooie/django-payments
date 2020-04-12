@@ -414,6 +414,12 @@ class PayuProvider(BasicProvider):
                     'CANCELED': PaymentStatus.REJECTED,
                     'NEW': '',
                 }
+                
+                payment.status = status_map[status]
+                payment.message = ''
+                payment.save()
+                status_changed.send(sender=type(payment), instance=payment)
+                
                 payment.change_status(status_map[status])
                 return HttpResponse("ok", status=200)
         return HttpResponse("not ok", status=500)
