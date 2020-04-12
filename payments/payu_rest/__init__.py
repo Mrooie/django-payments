@@ -8,6 +8,7 @@ except ImportError:
 
 from django import forms
 from django.http.response import HttpResponse, HttpResponseRedirect
+from payments.signals import status_changed
 from django.utils.html import format_html
 
 import requests
