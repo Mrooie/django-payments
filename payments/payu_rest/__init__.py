@@ -416,10 +416,10 @@ class PayuProvider(BasicProvider):
                     'NEW': '',
                 }
                 
-                payment.status = status_map[status]
-                payment.message = ''
-                payment.save()
-                status_changed.send(sender=type(payment), instance=payment)
+#                 payment.status = status_map[status]
+#                 payment.message = ''
+#                 payment.save()
+#                 status_changed.send(sender=type(payment), instance=payment)
                 
                 payment.change_status(status_map[status])
                 return HttpResponse("ok", status=200)
