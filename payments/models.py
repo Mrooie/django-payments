@@ -103,7 +103,7 @@ class BasePayment(models.Model):
         if not self.token:
             tries = {}  # Stores a set of tried values
             while True:
-                token = str(uuid4())
+                token = str(uuid4())[:30]
                 if token in tries and len(tries) >= 100:  # After 100 tries we are impliying an infinite loop
                     raise SystemExit('A possible infinite loop was detected')
                 else:
