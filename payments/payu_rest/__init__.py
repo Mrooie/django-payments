@@ -427,8 +427,8 @@ class PayuProvider(BasicProvider):
 
     def process_data(self, payment, request, *args, **kwargs):
         self.request = request
-
-#         renew_token = payment.get_renew_token()
+        
+        renew_token = None
 
         if 'application/json' in request.META.get('CONTENT_TYPE', {}):
             return self.process_notification(payment, request)
