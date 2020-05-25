@@ -468,7 +468,7 @@ class PaymentProcessor(object):
             self.paymethods = {}
             self.paymethods['payMethod'] = {'type': method_type, 'value': value}
 
-    def set_buyer_data(self, first_name, last_name, email, phone, lang_code='en'):
+    def set_buyer_data(self, first_name, last_name, email, phone, lang_code='pl'):
         "Set buyer data"
         if not hasattr(self, 'buyer'):
             self.buyer = {
