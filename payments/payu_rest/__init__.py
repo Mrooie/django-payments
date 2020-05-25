@@ -187,7 +187,7 @@ class PayuProvider(BasicProvider):
             "shop-name": " ".join((payment.billing_first_name, payment.billing_last_name)).strip().replace(" ", "_"),
             "total-amount": payment.total,
             "currency-code": payment.currency,
-            "customer-language": "en",
+            "customer-language": "pl",
             "success-callback": "cardSuccess",
         }
         if cvv_url:
